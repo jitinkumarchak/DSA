@@ -1,10 +1,11 @@
-function sumofdigits(num) {
-    let sum = 0;
-    while(num > 0){
-        sum += num % 10;
-        num = Math.floor(num / 10);
-    }
-    return sum;
+function sumofDigits(number) {
+  const inputnum = number.toString();
+  const splittednum = inputnum.split("");
+  let sum = 0;
+  splittednum.forEach((num) => {
+    sum = sum + parseInt(num);
+  });
+  return sum;
 }
 
-console.log(sumofdigits(1234));
+console.log(sumofDigits(1234));
