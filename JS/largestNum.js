@@ -8,4 +8,12 @@ function largetnum(arr){
     return largest;
 }
 
-console.log(largetnum([133,12,4,10]));
+
+function largestnum2(arr){
+    maxnum = Math.max(...arr);
+    return maxnum;
+}
+
+console.log(largestnum2([133,12,4,10]));
+console.log(largetnum([1,12,4,10]))
+
