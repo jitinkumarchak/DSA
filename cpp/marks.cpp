@@ -10,7 +10,7 @@ int main()
     {
         cout << "O";
     }
-    else if (marks >= 80)
+    else if (marks >= 80 && marks < 90)
     {
         cout << "A";
     }
