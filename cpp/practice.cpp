@@ -23,14 +23,25 @@ int main()
     // cout << sum ;
     // cout << endl;
 
-    int n = 5;
-    int sum = 0;
-    int i = 0;
-    while (i <= n)
+    // int n = 5;
+    // int sum = 0;
+    // int i = 0;
+    // while (i <= n)
+    // {
+    //     sum = sum + i;
+    //     i++;
+    // }
+    // cout << sum;
+
+    int n = 4;
+
+    for (int i = 1; i <= n; i++)
     {
-        sum = sum + i;
-        i++;
+        for (int j = 1; j <= n; j++)
+        {
+            cout << "* " ;
+        }
+        cout << endl;
     }
-    cout << sum;
     return 0;
 }
