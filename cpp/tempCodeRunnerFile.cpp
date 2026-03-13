@@ -1,1 +1,1 @@
-int oddsum = 0;
+cout << "n is a prime number";
