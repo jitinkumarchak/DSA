@@ -1,12 +1,22 @@
-function factorailofN(n) {
-  if (n < 0) {
-    throw new Error("n should be a -ve int");
-  }
-  let factorial = 1;
+// function factorailofN(n) {
+//   if (n < 0) {
+//     throw new Error("n should be a -ve int");
+//   }
+//   let factorial = 1;
+//   for (let i = 1; i <= n; i++) {
+//     factorial *= i;
+//   }
+//   return factorial;
+// }
+
+// console.log(factorailofN(5));
+
+function factorialofN(n) {
+  let fact = 1;
   for (let i = 1; i <= n; i++) {
-    factorial *= i;
+    fact = fact * i;
   }
-  return factorial;
+  return fact;
 }
 
-console.log(factorailofN("s"));
+console.log(factorialofN(5));
