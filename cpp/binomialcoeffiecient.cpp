@@ -1,31 +1,32 @@
 #include <iostream>
 using namespace std;
 
+int factorial(int n) // int n = n = r = n-r
+{
+    int fact = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        fact *= i;
+    }
+    return fact;
+}
+
+int ncrfact(int n, int r)
+{
+    int fact_n = factorial(n);
+    int fact_r = factorial(r);
+    int fact_nmr = factorial(n - r);
+
+    return fact_n / (fact_r * fact_nmr);
+};
+
 int main()
 {
     int n = 8;
     int r = 2;
-
-    int Nfact = 1;
-    for (int i = 1; i <= n; i++)
-    {
-        Nfact = Nfact * i;
-    };
-
-    int Rfact = 1;
-    for (int i = 1; i <= r; i++)
-    {
-        Rfact = Rfact * i;
-    };
-
-    int NminusRfact = 1;
-    for (int i = 1; i <= n - r; i++)
-    {
-        NminusRfact = NminusRfact * i;
-    };
-
-    int nCr = Nfact / (Rfact * NminusRfact);
+    int nCr = ncrfact(n, r);
 
     cout << "nCr is : " << nCr << endl;
+
     return 0;
 }
