@@ -1,1 +1,1 @@
-factors.push(i);
+console.log(sum);
