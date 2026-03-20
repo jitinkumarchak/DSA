@@ -8,11 +8,12 @@ int main()
 
     for (int i = 0; i < sizeof(marks) / sizeof(int); i++) // i<size
     {
-        if (marks[i] < smallest)
+        if (marks[i] < smallest) // smallest  = min(smallest,marks[i]);
         {
             smallest = marks[i];
         }
     }
+    cout << sizeof(smallest)  << endl;
     cout << "smallest element is : " << smallest << endl;
     return 0;
 }
