@@ -3,26 +3,28 @@ using namespace std;
 
 void reversearr(int arr[], int size)
 {
-    int left = 0;
-    int right = size - 1;
-    for (int i = 0; i < right; i++)
+    int start = 0;
+    int end = size - 1;
+
+    while (start < end)
     {
-        swap(arr[left], arr[right]);
-        left++;
-        right--;
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
     }
 }
+
 int main()
 {
+    int arr[] = {1, 3, 4, 5, 6, 7};
     int size = 6;
-    int arr[size] = {1,2,3,4,5,6};
 
-     reversearr(arr, size);
+    reversearr(arr, size);
 
     for (int i = 0; i < size; i++)
     {
-        cout << arr[i] << " " ;
+        cout << arr[i] << " ";
     }
-    cout << endl;
+
     return 0;
 }
