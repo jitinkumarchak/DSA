@@ -15,8 +15,7 @@ void reversestr(string s){
 }
 
 int main(){
-    vector<string> s = {"hello", "jitin"};
-    reversestr(s[0]);
-    reversestr(s[1]);
+    vector<string>s = {"hello"};
+     reversestr(s[0]) ;
     return 0;
 }
