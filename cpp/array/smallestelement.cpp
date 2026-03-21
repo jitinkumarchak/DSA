@@ -13,7 +13,6 @@ int main()
             smallest = marks[i];
         }
     }
-    cout << sizeof(smallest)  << endl;
     cout << "smallest element is : " << smallest << endl;
     return 0;
 }
