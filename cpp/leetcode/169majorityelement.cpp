@@ -3,11 +3,6 @@
 #include <algorithm>
 using namespace std;
 
-// vector<int> majorityelement(vector<int> nums, int n)
-// {
-
-// }
-
 int main()
 {
     vector<int> nums = {1, 2, 2, 2, 1};
