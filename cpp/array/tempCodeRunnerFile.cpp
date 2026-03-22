@@ -1,1 +1,1 @@
-cout << sizeof(largest) << endl ;
+swap(smallest,largest);
