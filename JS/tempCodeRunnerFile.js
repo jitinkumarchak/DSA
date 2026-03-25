@@ -1,1 +1,2 @@
-console.log(sum);
+console.log(num1);
+    console.log(num2);
