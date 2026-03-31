@@ -16,11 +16,35 @@ int maxRowSum(int matrix[3][3], int rows, int cols)
     }
     return maxRowSum;
 }
+
+int diagonalsum(int matrix[3][3], int n)
+{
+    int diagonalsum = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        // for (int j = 0; j < n; j++)
+        //     if (i == j)
+        //     {
+        //         diagonalsum += matrix[i][j]; // primary diagonal
+        //     }
+        //     else if (j == n - i - 1)
+        //     {
+        //         diagonalsum += matrix[i][j]; // secondary diagonal
+        //     }
+        diagonalsum += matrix[i][i];
+        if(i != n-i-1){
+            diagonalsum += matrix[i][n-i-1];
+        }
+    }
+    return diagonalsum;
+}
 int main()
 {
-    int matrix[3][3] = {{11, 22, 8}, {11, 45, 6}, {11, 67, 8}};
+    int matrix[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     int rows = 3;
     int cols = 3;
-    cout << maxRowSum(matrix, rows, cols);
+    int n =3;
+    cout << diagonalsum(matrix, n);
     return 0;
 }
