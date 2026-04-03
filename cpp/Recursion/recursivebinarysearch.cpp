@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+/// leetcode 504: binary search
+
 int recbinarysearch(vector<int> &arr, int tar, int s, int e)
 {
     int mid = s + (e - s) / 2;
