@@ -6,19 +6,23 @@ int recbinarysearch(vector<int> &arr, int tar, int s, int e)
 {
     int mid = s + (e - s) / 2;
 
-    if (tar == arr[mid])
+    while (s <= e)
     {
-        return mid;
+
+        if (tar == arr[mid])
+        {
+            return mid;
+        }
+        else if (tar > arr[mid])
+        {
+            return recbinarysearch(arr, tar, mid + 1, e);
+        }
+        else
+        {
+            return recbinarysearch(arr, tar, s, mid - 1);
+        }
     }
-    else if (tar > arr[mid])
-    {
-        return recbinarysearch(arr, tar, mid + 1, e);
-    }
-    else
-    {
-        return recbinarysearch(arr, tar, s, mid - 1);
-    }
-    return mid;
+    return -1;
 }
 
 int main()
