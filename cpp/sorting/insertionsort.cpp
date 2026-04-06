@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void insertionsort(int arr[], int n)  // O(n^2);
+void insertionsort(int arr[], int n) // O(n^2);
 {
     for (int i = 1; i < n; i++)
     {
