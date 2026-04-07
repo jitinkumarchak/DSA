@@ -25,7 +25,7 @@ public:
         Head = Tail = NULL;
     }
 
-    void push_front(int val)
+    void push_front(int val) // O(1)
     {
         Node *newNode = new Node(val); // dyanmic object node creation / memory allocation allow krta hai
         // Node newNode(val);  static , i dont want this beacause its static means after completing this fucntion the mode will be deleted.
@@ -42,7 +42,7 @@ public:
         }
     }
 
-    void push_back(int val)
+    void push_back(int val) // O(1)
     {
         Node *newNode = new Node(val);
         if (Head == NULL)
@@ -57,7 +57,7 @@ public:
         }
     }
 
-    void pop_front()
+    void pop_front() // O(1)
     {
         if (Head == NULL)
         {
@@ -72,7 +72,7 @@ public:
         delete temp;
     }
 
-    void pop_back()
+    void pop_back() // O(n)
     {
         if (Head == NULL)
         {
@@ -90,7 +90,7 @@ public:
         Tail = temp;
     }
 
-    void insert(int val, int pos)
+    void insert(int val, int pos) // O(n)
     {
         if (pos < 0)
         {
@@ -119,7 +119,7 @@ public:
         temp->next = newNode;
     }
 
-    int search(int key)
+    int search(int key) // O(n)
     {
         int idx = 0;
         Node *temp = Head;
@@ -135,31 +135,31 @@ public:
         return -1;
     }
 
-        void printLL()
-        {
-            Node *temp = Head;
-
-            while (temp != NULL)
-            {
-                cout << temp->data << "->";
-                temp = temp->next;
-            }
-            cout << "NULL" << endl;
-        }
-    };
-
-    int main()
+    void printLL() // O(n)
     {
+        Node *temp = Head;
 
-        List LL;
-
-        LL.push_front(3);
-        LL.push_front(2);
-        LL.push_front(1);
-        LL.printLL();
-        LL.insert(4, 0);
-        LL.printLL();
-
-        cout << LL.search(3) << endl;
-        return 0;
+        while (temp != NULL)
+        {
+            cout << temp->data << "->";
+            temp = temp->next;
+        }
+        cout << "NULL" << endl;
     }
+};
+
+int main()
+{
+
+    List LL;
+
+    LL.push_front(3);
+    LL.push_front(2);
+    LL.push_front(1);
+    LL.printLL();
+    LL.insert(4, 0);
+    LL.printLL();
+
+    cout << LL.search(3) << endl;
+    return 0;
+}
