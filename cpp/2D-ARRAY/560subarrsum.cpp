@@ -38,7 +38,7 @@ int subarrsum(vector<int> &nums, int k)
 
 int main()
 {
-    vector<int> nums = {9, 4, 20, 10, 23, 10};
+    vector<int> nums = {9, 4, 20, 10, 23, 4};
     int k = 33;
 
     cout << subarrsum(nums, k);
