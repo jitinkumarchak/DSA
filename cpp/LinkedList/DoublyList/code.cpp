@@ -59,6 +59,24 @@ public:
         }
     }
 
+    void popfront()
+    {
+        if (head == NULL)
+        {
+            cout << "DLL is empty";
+        }
+        Node *temp = head;
+        head = head->next;
+
+        if (head != NULL)
+        {
+            head->prev = NULL;
+        }
+
+        temp->next = NULL;
+        delete temp;
+    }
+
     void print()
     {
         Node *temp = head;
@@ -75,10 +93,12 @@ int main()
 {
     DoublyList dll;
 
-    dll.push_front(1);
-    dll.push_front(2);
-    dll.push_front(3);
-    dll.Push_back(0);
+    dll.Push_back(1);
+    dll.Push_back(2);
+    dll.Push_back(3);
+    dll.Push_back(4);
+    dll.print();
+    dll.popfront();
     dll.print();
 
     return 0;
