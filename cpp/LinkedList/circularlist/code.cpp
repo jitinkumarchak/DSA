@@ -82,6 +82,30 @@ public:
             delete temp;
         }
     }
+
+    void deleteattail()
+    {
+        if (head == NULL)
+            return;
+        else if (head == tail)
+        {
+            delete head;
+            head = tail = NULL;
+        }
+        else
+        {
+            Node *temp = tail;
+            Node *prev = head;
+            while (prev->next != tail)
+            {
+                prev = prev->next;
+            }
+            tail = prev;
+            tail->next = head;
+            temp->next = NULL;
+            delete temp;
+        }
+    }
     void print()
     {
         if (head == NULL)
@@ -107,9 +131,12 @@ int main()
     Circularlist cll;
 
     cll.Insertathead(1);
+    cll.Insertathead(2);
+    cll.insertatTail(3);
     cll.print();
-    cll.insertatTail(2);
-    cll.deleteathead();
+    cll.deleteattail();
+    cll.deleteattail();
+    cll.deleteattail();
     cll.print();
 
     return 0;
