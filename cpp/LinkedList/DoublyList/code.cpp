@@ -89,9 +89,9 @@ public:
 
         if (tail != NULL)
         {
-            temp->prev = NULL;
+            tail->next = NULL;
         }
-        tail->next = NULL;
+        temp->prev = NULL;
         delete temp;
     }
 
