@@ -42,16 +42,44 @@ public:
         }
     }
 
-    void insertatTail(int val){
-        Node* newnode = new Node(val);
+    void insertatTail(int val)
+    {
+        Node *newnode = new Node(val);
 
-        if(tail == NULL){
+        if (tail == NULL)
+        {
             head = tail = newnode;
             tail->next = head;
-        }else{
+        }
+        else
+        {
             tail->next = newnode;
             tail = newnode;
             newnode->next = head;
+        }
+    }
+
+    void deleteathead()
+    {
+
+        if (head == NULL)
+        {
+            cout << "CLL is empty";
+            return;
+        }
+        else if (head == tail)
+        {
+            delete head;
+            head = tail = NULL;
+        }
+        else
+        {
+            Node *temp = head;
+            head = head->next;
+            tail->next = head;
+
+            temp->next = NULL;
+            delete temp;
         }
     }
     void print()
@@ -81,6 +109,7 @@ int main()
     cll.Insertathead(1);
     cll.print();
     cll.insertatTail(2);
+    cll.deleteathead();
     cll.print();
 
     return 0;
