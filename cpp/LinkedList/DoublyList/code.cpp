@@ -77,6 +77,24 @@ public:
         delete temp;
     }
 
+    void pop_back()
+    {
+        if (head == NULL)
+        {
+            cout << "dll is empty";
+        }
+
+        Node *temp = tail;
+        tail = tail->prev;
+
+        if (tail != NULL)
+        {
+            temp->prev = NULL;
+        }
+        tail->next = NULL;
+        delete temp;
+    }
+
     void print()
     {
         Node *temp = head;
@@ -98,7 +116,8 @@ int main()
     dll.Push_back(3);
     dll.Push_back(4);
     dll.print();
-    dll.popfront();
+    dll.pop_back();
+    dll.pop_back();
     dll.print();
 
     return 0;
