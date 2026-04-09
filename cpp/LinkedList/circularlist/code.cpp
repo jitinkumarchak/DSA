@@ -41,6 +41,19 @@ public:
             tail->next = newnode;
         }
     }
+
+    void insertatTail(int val){
+        Node* newnode = new Node(val);
+
+        if(tail == NULL){
+            head = tail = newnode;
+            tail->next = head;
+        }else{
+            tail->next = newnode;
+            tail = newnode;
+            newnode->next = head;
+        }
+    }
     void print()
     {
         if (head == NULL)
@@ -66,6 +79,8 @@ int main()
     Circularlist cll;
 
     cll.Insertathead(1);
+    cll.print();
+    cll.insertatTail(2);
     cll.print();
 
     return 0;
