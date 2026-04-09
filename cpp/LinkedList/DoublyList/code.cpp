@@ -43,6 +43,22 @@ public:
         }
     }
 
+    void Push_back(int val)
+    {
+        Node *NewNode = new Node(val);
+
+        if (head == NULL)
+        {
+            head = tail = NewNode;
+        }
+        else
+        {
+            NewNode->prev = tail;
+            tail->next = NewNode;
+            tail = NewNode;
+        }
+    }
+
     void print()
     {
         Node *temp = head;
@@ -62,7 +78,7 @@ int main()
     dll.push_front(1);
     dll.push_front(2);
     dll.push_front(3);
-
+    dll.Push_back(0);
     dll.print();
 
     return 0;
