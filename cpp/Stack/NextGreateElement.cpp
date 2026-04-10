@@ -3,6 +3,8 @@
 #include <stack>
 using namespace std;
 
+//O(n);
+
 int main()
 {
 
