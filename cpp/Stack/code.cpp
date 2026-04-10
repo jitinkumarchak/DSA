@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <list>
 using namespace std;
 
-class stack
+class stack // implementing stack using vectors
 {
     vector<int> v;
 
@@ -28,10 +29,36 @@ public:
     }
 };
 
+class stackll // implementing stack using linked list
+{
+    list<int> ll;
+
+public:
+    void push(int val)
+    {
+        ll.push_front(val);
+    }
+
+    void pop()
+    {
+        ll.pop_front();
+    }
+
+    int top()
+    {
+        return ll.front();
+    }
+
+    bool empty()
+    {
+        return ll.size() == 0;
+    }
+};
+
 int main()
 {
 
-    stack s;
+    stackll s;
 
     s.push(5);
     s.push(10);
