@@ -23,7 +23,7 @@ bool isvalid(string str)
             {
                 s.pop();
             }
-            else
+            else // no match
             {
                 return false;
             }
