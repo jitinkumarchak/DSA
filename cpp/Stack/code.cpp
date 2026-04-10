@@ -1,64 +1,65 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <stack>
 using namespace std;
 
-class stack // implementing stack using vectors
-{
-    vector<int> v;
+// class stack // implementing stack using vectors
+// {
+//     vector<int> v;
 
-public:
-    void push(int val)
-    {
-        v.push_back(val);
-    }
+// public:
+//     void push(int val)
+//     {
+//         v.push_back(val);
+//     }
 
-    void pop()
-    {
-        v.pop_back();
-    }
+//     void pop()
+//     {
+//         v.pop_back();
+//     }
 
-    int top()
-    {
-        return v[v.size() - 1];
-    }
+//     int top()
+//     {
+//         return v[v.size() - 1];
+//     }
 
-    bool empty()
-    {
-        return v.size() == 0;
-    }
-};
+//     bool empty()
+//     {
+//         return v.size() == 0;
+//     }
+// };
 
-class stackll // implementing stack using linked list
-{
-    list<int> ll;
+// class stackll // implementing stack using linked list
+// {
+//     list<int> ll;
 
-public:
-    void push(int val)
-    {
-        ll.push_front(val);
-    }
+// public:
+//     void push(int val)
+//     {
+//         ll.push_front(val);
+//     }
 
-    void pop()
-    {
-        ll.pop_front();
-    }
+//     void pop()
+//     {
+//         ll.pop_front();
+//     }
 
-    int top()
-    {
-        return ll.front();
-    }
+//     int top()
+//     {
+//         return ll.front();
+//     }
 
-    bool empty()
-    {
-        return ll.size() == 0;
-    }
-};
+//     bool empty()
+//     {
+//         return ll.size() == 0;
+//     }
+// };
 
 int main()
 {
 
-    stackll s;
+    stack<int> s;
 
     s.push(5);
     s.push(10);
