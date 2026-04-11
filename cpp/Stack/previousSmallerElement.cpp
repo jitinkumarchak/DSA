@@ -3,14 +3,16 @@
 #include <stack>
 using namespace std;
 
+// TC: O(n); SC: O(n);
+
 vector<int> previoussmallerelement(vector<int> &arr)
 {
     vector<int> ans(arr.size(), 0);
     stack<int> s;
 
-    for (int i = 0; i < arr.size(); i++)
+    for (int i = 0; i < arr.size(); i++) // O(n)
     {
-        while (s.size() > 0 && s.top() >= arr[i])
+        while (s.size() > 0 && s.top() >= arr[i]) // O(2n)
         {
             s.pop();
         }
