@@ -11,7 +11,7 @@ vector<int> nextGreater(vector<int> &nums)
 
     for (int i = n - 1; i >= 0; i--)
     {
-        while (!s.empty() && nums[s.top()] <= nums[i % n])
+        while (s.size() > 0  && nums[s.top()] <= nums[i % n])
         {
             s.pop();
         }
