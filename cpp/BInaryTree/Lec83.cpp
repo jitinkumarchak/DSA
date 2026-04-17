@@ -60,7 +60,18 @@ void Inorder(Node *root) // O(n)
     Inorder(root->right);
 }
 
+// postorder
+void postOrder(Node *root) // O(n)
+{
+    if (root == NULL)
+    {
+        return;
+    }
 
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root->data << " ";
+};
 
 int main()
 {
@@ -72,7 +83,8 @@ int main()
     Inorder(root);
     cout << endl;
 
-   
+    postOrder(root);
+    cout << endl;
 
     return 0;
 }
