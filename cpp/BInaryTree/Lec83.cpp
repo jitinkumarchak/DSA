@@ -34,7 +34,7 @@ Node *BuildTree(vector<int> preorder)
 
 // preorder
 
-void preOrder(Node *root)
+void preOrder(Node *root) // O(n)
 {
     if (root == NULL)
     {
@@ -46,12 +46,33 @@ void preOrder(Node *root)
     preOrder(root->right);
 };
 
+// inorder
+
+void Inorder(Node *root) // O(n)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    Inorder(root->left);
+    cout << root->data << " ";
+    Inorder(root->right);
+}
+
+
+
 int main()
 {
     vector<int> preorder = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
     Node *root = BuildTree(preorder);
     preOrder(root);
     cout << endl;
+
+    Inorder(root);
+    cout << endl;
+
+   
 
     return 0;
 }
