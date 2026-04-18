@@ -32,23 +32,24 @@ Node *BuildTree(vector<int> preorder)
     return root;
 }
 
-void helper(Node *root, vector<int> &ans)
+int count(Node *root)
 {
     if (root == NULL)
     {
-        return;
+        return 0;
     }
 
-    ans.push_back(root);
-    helper(root->left, ans);
-    helper(root->right, ans);
+    int leftcount = count(root->left);
+    int rightcount = count(root->right);
+    return leftcount + rightcount + 1;
 }
 
 int main()
 {
     vector<int> preorder = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
     Node *root = BuildTree(preorder);
-    helper(root, preorder);
+
+    cout << count(root) << " ";
 
     return 0;
 }
