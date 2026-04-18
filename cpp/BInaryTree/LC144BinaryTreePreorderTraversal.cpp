@@ -34,21 +34,27 @@ Node *BuildTree(vector<int> preorder)
 
 void helper(Node *root, vector<int> &ans)
 {
-    if (root == NULL)
-    {
+     if(root == NULL){
         return;
-    }
+     }
 
-    ans.push_back(root);
+    ans.push_back(root->data);
     helper(root->left, ans);
     helper(root->right, ans);
+
 }
 
 int main()
 {
     vector<int> preorder = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
     Node *root = BuildTree(preorder);
-    helper(root, preorder);
+    vector<int> ans; 
+    helper(root, ans);
+
+    for (int val : ans)
+    {
+        cout << val << " ";
+    }
 
     return 0;
 }
