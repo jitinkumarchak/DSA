@@ -134,9 +134,9 @@ int main()
     inorder(root);
     cout << endl;
 
-    DelNode(root, 6);
+    DelNode(root, 1);
 
-    cout << " after : " ;
+    cout << " after : ";
 
     inorder(root);
     cout << endl;
