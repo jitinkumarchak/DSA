@@ -56,12 +56,34 @@ void inorder(Node *root)
     inorder(root->right);
 }
 
+bool search(Node *root, int target)
+{
+    if (root == NULL)
+    {
+        return false;
+    }
+
+    if (root->data == target)
+    {
+        return true;
+    }
+
+    if (target < root->data)
+    {
+        return search(root->left, target);
+    }
+    else
+    {
+        return search(root->right, target);
+    }
+}
+
 int main()
 {
     vector<int> arr = {3, 2, 1, 5, 4, 6};
     Node *root = BST(arr);
-    inorder(root);
-    cout << endl;
+    // inorder(root);
+    cout << search(root, 8) << endl;
 
     return 0;
 }
