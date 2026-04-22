@@ -78,12 +78,68 @@ bool search(Node *root, int target)
     }
 }
 
+Node *InOrderSuccessor(Node *root) // left most node in right subtree
+{
+    while (root != NULL && root->left != NULL)
+    {
+        root = root->left;
+    }
+    return root;
+}
+
+Node *DelNode(Node *root, int key)
+{
+    if (root == NULL)
+    {
+        return NULL;
+    }
+
+    if (key < root->data)
+    {
+        root->left = DelNode(root->left, key);
+    }
+    else if (key > root->data)
+    {
+        root->right = DelNode(root->right, key);
+    }
+    else
+    {
+        if (root->left == NULL)
+        {
+            Node *temp = root->right;
+            delete root;
+            return temp;
+        }
+        else if (root->right == NULL)
+        {
+            Node *temp = root->left;
+            delete root;
+            return temp;
+        }
+        else
+        { //  2 children
+            Node *IS = InOrderSuccessor(root->right);
+            root->data = IS->data;
+            root->right = DelNode(root->right, IS->data);
+        }
+    }
+    return root;
+}
 int main()
 {
     vector<int> arr = {3, 2, 1, 5, 4, 6};
     Node *root = BST(arr);
-    // inorder(root);
-    cout << search(root, 8) << endl;
+
+    cout << " BEfore:" << " ";
+    inorder(root);
+    cout << endl;
+
+    DelNode(root, 6);
+
+    cout << " after : " ;
+
+    inorder(root);
+    cout << endl;
 
     return 0;
 }
