@@ -18,7 +18,7 @@ Node *prevNode = NULL;
 Node *first = NULL;
 Node *sec = NULL;
 
-void inorder(Node *root)
+void inorder(Node *root) // TC : O(n), SC= O(n), SC= O(1) using morries inorder traversal;
 {
     if (root == NULL)
     {
