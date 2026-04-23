@@ -27,7 +27,7 @@ Node *rightMostinLeftSubtree(Node *root)
     return ans;
 }
 
-Node *rightMostinRightSubtree(Node *root)
+Node * leftMostinRightSubtree(Node *root)
 {
     Node *ans;
     while (root != NULL)
@@ -64,7 +64,7 @@ vector<int> findpredecessorsuccessor(Node *root, int key)
 
             if (curr->right != NULL)
             {
-                succ = rightMostinRightSubtree(curr->right);
+                succ = leftMostinRightSubtree(curr->right);
             }
             break;
         }
