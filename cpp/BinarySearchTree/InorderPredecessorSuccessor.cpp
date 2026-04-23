@@ -74,7 +74,7 @@ vector<int> findpredecessorsuccessor(Node *root, int key)
     return {p, s};
 }
 
-int main()
+int main()   // TC - O(height of tree : h) ,  SC - O(1);
 {
     Node *root = new Node(6);
     root->left = new Node(4);
