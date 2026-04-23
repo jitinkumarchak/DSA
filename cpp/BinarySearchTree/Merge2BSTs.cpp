@@ -26,7 +26,7 @@ void inorder(Node *root, vector<int> &arr)
     inorder(root->right, arr);
 }
 
-Node *BuildBSTFromSorted(vector<int> &arr, int st, int end)
+Node *BuildBSTFromSorted(vector<int> &arr, int st, int end) // O(n+n)
 {
     if (st > end)
     {
@@ -43,7 +43,7 @@ Node *BuildBSTFromSorted(vector<int> &arr, int st, int end)
 }
 
 Node *
-MergeBst(Node *root1, Node *root2)
+MergeBst(Node *root1, Node *root2) // O(m+n)
 {
     vector<int> arr1, arr2;
     inorder(root1, arr1);
