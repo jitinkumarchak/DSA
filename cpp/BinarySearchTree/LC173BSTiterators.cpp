@@ -49,7 +49,7 @@ public:
     }
 };
 
-int main()
+int main()  // time complexity  - O(1) , SC - O(h); //height of tree
 {
     Node *root = new Node(7);
     root->left = new Node(3);
