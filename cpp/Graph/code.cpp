@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 #include <list>
 using namespace std;
 
@@ -34,6 +35,36 @@ public:
             cout << endl;
         }
     }
+
+    // BFS traversal
+    void BFS() // O(V+E);
+    {
+        queue<int> q;
+        vector<bool> vis(V, false);
+
+        q.push(0);
+        vis[0] = true;
+
+        while (q.size() > 0)
+        {
+            int u = q.front();
+            q.pop();
+
+            cout << u << " ";
+
+            for (int v : l[u]) // imeadiate neighbour
+
+            {
+                if (!vis[v])
+                {
+                    vis[v] = true;
+                    q.push(v);
+                }
+            }
+        }
+
+        cout << endl;
+    }
 };
 
 int main()
@@ -46,6 +77,7 @@ int main()
     g.AddEdge(2, 3);
     g.AddEdge(2, 4);
 
-    g.PrintADJList();
+    g.BFS();
+
     return 0;
 }
