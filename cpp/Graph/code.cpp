@@ -65,6 +65,33 @@ public:
 
         cout << endl;
     }
+
+    void bfs()
+    {
+        queue<int> q;
+        vector<bool> vis(V, false);
+
+        q.push(0);
+        vis[0] = true;
+
+        while (q.size() > 0)
+        {
+            int u = q.front();
+            q.pop();
+
+            cout << u << " ";
+
+            for (int v : l[u])
+            {
+                if (!vis[v])
+                {
+                    vis[v] = true;
+                    q.push(v);
+                }
+            }
+        }
+        cout << endl;
+    }
 };
 
 int main()
@@ -78,6 +105,8 @@ int main()
     g.AddEdge(2, 4);
 
     g.BFS();
+
+    g.bfs();
 
     return 0;
 }
