@@ -65,31 +65,28 @@ public:
 
         cout << endl;
     }
+    // DFS traversal
 
-    void bfs()
+    void DFShelper(int u, vector<bool> &vis)
     {
-        queue<int> q;
-        vector<bool> vis(V, false);
+        cout << u << " ";
+        vis[u] = true;
 
-        q.push(0);
-        vis[0] = true;
-
-        while (q.size() > 0)
+        for (int v : l[u])
         {
-            int u = q.front();
-            q.pop();
-
-            cout << u << " ";
-
-            for (int v : l[u])
+            if (!vis[v])
             {
-                if (!vis[v])
-                {
-                    vis[v] = true;
-                    q.push(v);
-                }
+                DFShelper(v, vis);
             }
         }
+    }
+
+    void dfs() // O(V+E)
+    {
+        int src = 0;
+        vector<bool> vis(V, false);
+
+        DFShelper(src, vis);
         cout << endl;
     }
 };
@@ -101,12 +98,10 @@ int main()
     g.AddEdge(0, 1);
     g.AddEdge(1, 2);
     g.AddEdge(1, 3);
-    g.AddEdge(2, 3);
     g.AddEdge(2, 4);
 
     g.BFS();
-
-    g.bfs();
+    g.dfs();
 
     return 0;
 }
