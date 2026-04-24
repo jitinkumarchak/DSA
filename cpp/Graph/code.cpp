@@ -89,6 +89,43 @@ public:
         DFShelper(src, vis);
         cout << endl;
     }
+
+    bool isCycleUndirected(int src, int par, vector<bool> &vis) // O(V + E)
+    {
+        vis[src] = true;
+
+        list<int> neighbours = l[src];
+
+        for (int v : neighbours)
+        {
+            if (!vis[v])
+            {
+                isCycleUndirected(v, src, vis);
+            }
+            else if (v != par)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool isCycle()
+    {
+        vector<bool> vis(V, false);
+
+        for (int i = 0; i < V; i++)
+        {
+            if (!vis[i])
+            {
+                if (isCycleUndirected(i, -1, vis))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 };
 
 int main()
@@ -96,12 +133,15 @@ int main()
     Graph g(5);
 
     g.AddEdge(0, 1);
+    // g.AddEdge(0, 2);
+    g.AddEdge(0, 3);
     g.AddEdge(1, 2);
-    g.AddEdge(1, 3);
-    g.AddEdge(2, 4);
+    g.AddEdge(3, 4);
 
-    g.BFS();
-    g.dfs();
+    // g.BFS();
+    // g.dfs();
+
+    cout << g.isCycle() << endl;
 
     return 0;
 }
