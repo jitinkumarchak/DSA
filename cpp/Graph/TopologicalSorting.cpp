@@ -36,7 +36,7 @@ public:
         s.push(curr);
     }
 
-    void TopoSort()
+    void TopoSort()  // O(V+E)  
     {
         vector<bool> vis(V, false);
         stack<int> s;
