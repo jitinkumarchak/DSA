@@ -21,7 +21,7 @@ public:
 // for directed graph = V(V-1) == V^2 = E
 // for undirected grapgh = V(V-1)/2
 
-void BellmanFord(int src, vector<vector<Edge>> g, int V)
+void BellmanFord(int src, vector<vector<Edge>> g, int V) // TC = O (V.E)
 {
     vector<int> dist(V, INT_MAX);
     dist[src] = 0;
@@ -61,5 +61,7 @@ int main()
     g[3].push_back(Edge(4, 4));
 
     BellmanFord(0, g, V);
+
+    // doesnt work on nagative cycles; beacuse the total dist of a cycle should be in +ve;
     return 0;
 }
