@@ -33,7 +33,10 @@ int PrimMST(int V, vector<vector<pair<int, int>>> &adj)
                 int v = adj[u][i].first;
                 int w = adj[u][i].second;
 
-                pq.push({w, v});
+                if (!inMST[v])
+                {
+                    pq.push({w, v});
+                }
             }
         }
     }
