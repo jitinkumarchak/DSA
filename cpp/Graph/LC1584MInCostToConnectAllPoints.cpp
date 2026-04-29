@@ -8,7 +8,7 @@ class Graph
 {
 };
 
-int PrimMST(int V, vector<vector<pair<int, int>>> &adj)
+int PrimMST(int V, vector<vector<pair<int, int>>> &adj) // TC - O(V^2) , SC - O(V)
 {
     vector<bool> inMST(V, false);
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
