@@ -1,1 +1,1 @@
-cout << l;
+ // freqcount(arr, n);
